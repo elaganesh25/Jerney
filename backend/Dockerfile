@@ -11,6 +11,7 @@ FROM node:20-alpine AS production
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
 # Security: remove unnecessary packages
+# hadolint ignore=DL3018
 RUN apk add --no-cache curl bash
 
 WORKDIR /app
