@@ -185,8 +185,7 @@ jobs:
           skip_check: CKV_AWS_39,CKV_AWS_58  # Public EKS endpoint (intentional for dev)
           output_format: cli
           log_level: WARNING
-          container_user: 0
-
+          
       - name: Run Checkov on Kubernetes manifests
         uses: bridgecrewio/checkov-action@v12
         with:
