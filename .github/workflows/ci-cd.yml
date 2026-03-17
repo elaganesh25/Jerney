@@ -185,6 +185,16 @@ jobs:
           skip_check: CKV_AWS_39,CKV_AWS_58  # Public EKS endpoint (intentional for dev)
           output_format: cli
           log_level: WARNING
+
+          # Force-disable unused inputs so GitHub doesn't pass ""
+          file: null
+          check: null
+          skip_path: null
+          output_file_path: null
+          docker_image: null
+          dockerfile_path: null
+          var_file: null
+
           
       - name: Run Checkov on Kubernetes manifests
         uses: bridgecrewio/checkov-action@v12
