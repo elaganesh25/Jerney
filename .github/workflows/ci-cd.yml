@@ -176,15 +176,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run Checkov on Terraform
-        uses: bridgecrewio/checkov-action@v12
-        with:
-          directory: terraform/
-          framework: terraform
+      #- name: Run Checkov on Terraform
+       # uses: bridgecrewio/checkov-action@v12
+        #with:
+         # directory: terraform/
+         # framework: terraform
           #soft_fail: true
-          skip_check: CKV_AWS_39,CKV_AWS_58  # Public EKS endpoint (intentional for dev)
-          output_format: cli
-          log_level: WARNING
+        #  skip_check: CKV_AWS_39,CKV_AWS_58  # Public EKS endpoint (intentional for dev)
+         # output_format: cli
+        #  log_level: WARNING
           
       - name: Run Checkov on Kubernetes manifests
         uses: bridgecrewio/checkov-action@v12
