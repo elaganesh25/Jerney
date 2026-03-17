@@ -10,8 +10,10 @@ FROM node:20-alpine AS production
 # Security: run as non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-# Security: remove unnecessary packages
-RUN apk add --no-cache curl bash
+# Security: install only required packages with pinned versions
+RUN apk add --no-cache \
+    curl=8.5.0-r0 \
+    bash=5.2.21-r0
 
 WORKDIR /app
 
